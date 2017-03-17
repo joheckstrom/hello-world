@@ -5,6 +5,8 @@ node {
    echo 'Hello World'
    stage 'Hello2'
    echo 'Hello World2'
+   stage 'Hello3'
+   echo 'Hello World3'
    
    
 }
