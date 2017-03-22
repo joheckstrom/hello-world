@@ -12,7 +12,7 @@ node {
       }
      stage('Test-1') {
          parallel linux: {
-            node('windows1') {
+            node('linux1') {
                echo 'Testing Hello World2 linux'
             }
          },
