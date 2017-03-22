@@ -1,3 +1,4 @@
+#!groovy
 pipeline {
    agent any
 
@@ -12,7 +13,7 @@ pipeline {
             echo 'building Hello World'
         }
       }
-      stage('Test-1') {
+    /*  stage('Test-1') {
          parallel linux: {
             node('windows1') {
                echo 'Testing Hello World2 linux'
@@ -23,7 +24,7 @@ pipeline {
                   echo 'Testing Hello World2 windows'
             }
          }
-      }
+      }*/
       stage('Deploy') {
          steps {
             echo 'Hello World3'
