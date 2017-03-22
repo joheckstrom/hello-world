@@ -1,5 +1,5 @@
 #!groovy
-
+node {
      stage('Checkout') {
   
             checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [[$class: 'RelativeTargetDirectory', relativeTargetDir: '']], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/joheckstrom/hello-world2.git']]])
@@ -32,3 +32,4 @@
             echo 'Hello World4'
          
       }
+}
