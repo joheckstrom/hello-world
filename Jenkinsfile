@@ -17,12 +17,12 @@ pipeline {
             echo 'Testing Hello World2'
            }
       }
-      stage('Hello3') {
+      stage('Deploy') {
          steps {
             echo 'Hello World3'
           }
       }
-      stage('Hello4') {
+      stage('Check') {
          steps {
             echo 'Hello World4'  
          }
