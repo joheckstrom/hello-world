@@ -1,6 +1,6 @@
 pipeline {
    agent any
-   
+
    stages {
       stage('Checkout') {
          steps {
@@ -13,9 +13,16 @@ pipeline {
         }
       }
       stage('Test-1') {
-         steps {
-            echo 'Testing Hello World2'
-           }
+         parallel linux: {
+            node('windows1') {
+               echo 'Testing Hello World2 linux'
+            }
+         },
+         windows: {
+            node('windows2') {
+                  echo 'Testing Hello World2 windows'
+            }
+         }
       }
       stage('Deploy') {
          steps {
@@ -24,9 +31,9 @@ pipeline {
       }
       stage('Check') {
          steps {
-            echo 'Hello World4'  
+            echo 'Hello World4'
          }
       }
-   
+
    }
 }
